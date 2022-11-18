@@ -23,7 +23,42 @@ def CriarRotas(verticeInicial,verticeFinal):
 
 
 
+######################################################################################################################################################################################################
+#################################################################################################################################################################################################################
+#################################################
 
+def TransformaNPEmLista(arrayDi):
+    l=[]
+    Numero_de_linhas=46824
+    
+    for i in range(1,Numero_de_linhas):
+        #print(arrayDi[i])
+        string = str(arrayDi[i])
+        #print(string)
+        lista = string.split()
+        l.append(lista)
+    return l
+
+
+
+##################################################################################################################
+##################################################################################################
+##############################################################################################################################################################################################
+    #### Criar uma tuple que armazena todos os valores de um indice 
+def retornaVerticeAdj(lista):
+    
+    
+
+    #tupla =( [for i in range 10] )
+    tupla =(10,11)
+    print(tupla)
+    tupla=(12,14)
+    print(tupla)
+    return None
+
+
+#################################################################################################################################################################
+#####################################################################################################################################################
 # criando uma função que recebe ArrayDi e dividir em dois 
 # essa função serve como auxiliar para a  função que vai criar a lista
 def SeperandoArrayDi(arrayDi):
@@ -34,7 +69,7 @@ def SeperandoArrayDi(arrayDi):
   VerticeFinal =[]
   tam =int(NumeroDeNo(arrayDi))
   print(tam)
-  while i<5:
+  while i<tam:
     aux =int(arrayDi[i][0])
     VerticeInicial.append(aux) # convert str em int 
     #VerticeInicial.append(arrayDi[i][0])
