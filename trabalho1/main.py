@@ -23,6 +23,8 @@ arrayDi = df['Teste1'].to_numpy()
 
 
 l=TransformaNPEmLista(arrayDi)
+
+
 # print(l[0]) # primeiro elemento da lista  ['1','22']
 print(l[0])         # ['1','22']
 print(l[0][0])      # 1
@@ -45,22 +47,18 @@ print()
 t=retornaVerticeAdj(l)
 print()
 
+"""
+variavel1=10 
+variavel2=11
+dic={}
+dic.update({'nome': (variavel1, variavel2)})
 
+print(type(dic),dic)
 
+"""
 
 ## ultimo elmeento do 1 é 2162 1 7017
 
-rooms2 = [[l[r][i] for i in range(2)] for r in range(2162)]
-#print(type(rooms2))
-tupla =tuple(rooms2)
-#print(tupla,type(tupla))
-var ='1'
 
-"""
-for idx in range (2162):
-    if var != l[idx][0]:
-        print(l[idx][0],":",l[idx][1])
-        #print(type(l[idx][0]))
-"""    
 
 # print(l[46822]) ## ultimo elemento # da lista 

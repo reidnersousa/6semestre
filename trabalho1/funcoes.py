@@ -49,11 +49,26 @@ def retornaVerticeAdj(lista):
     
   vertice=lista[0][0] #1
   idx =0
-  while vertice != lista[idx][0]:
+  listaAux =[]
+  dictonarioAux={}
+  
+  while vertice == lista[idx][0]:
+    #print("entro no while")
+    print(lista[idx][0],":",lista[idx][1])
+    listaAux.append(lista[idx][1])
     
-    print(lista[idx][0])
     idx += 1 
-    print(vertice)
+  else :
+    tuplaAux = tuple(listaAux)
+    dictonarioAux.update({vertice: (tuplaAux)})
+
+    #print(dictonarioAux)
+    print("else",lista[idx][0],":",lista[idx][1])
+    
+    vertice = lista[idx][0]
+    idx -=1
+ 
+    
     
   return None
 
