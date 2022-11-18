@@ -42,23 +42,19 @@ print(l[2][0])      # 1
 print(l[2][1])      # 10
 
 
+print(l[46822]) ## ultimo elemento # da lista  ['11616', '29809']
+print(l[46822][0])  # 11616
+print(l[46822][1])  # 29809
 
 print()
-t=retornaVerticeAdj(l)
-print()
+d=retornaVerticeAdj(l)
 
-"""
-variavel1=10 
-variavel2=11
-dic={}
-dic.update({'nome': (variavel1, variavel2)})
+#print(d.get('5'))
 
-print(type(dic),dic)
-
-"""
+print(type(d))
 
 ## ultimo elmeento do 1 é 2162 1 7017
 
 
 
-# print(l[46822]) ## ultimo elemento # da lista 
+

@@ -63,9 +63,9 @@ def retornaVerticeAdj(lista):
       tuplaAux = tuple(listaAux)
       dictonarioAux.update({vertice: (tuplaAux)})
 
-      print(dictonarioAux.get('1'))
+      #print(dictonarioAux.get('1'))
 
-      print(dictonarioAux.get('2'))
+      #print(dictonarioAux.get('2'))
       #print("else",lista[idx][0],":",lista[idx][1])
     
       vertice = lista[idx][0]
@@ -74,7 +74,7 @@ def retornaVerticeAdj(lista):
       idx -=1
       
 
-    if vertice == '3':
+    if lista[idx][1]=='29809':
       print("AAA")
       break
     
@@ -83,7 +83,7 @@ def retornaVerticeAdj(lista):
  
     
     
-  return None
+  return dictonarioAux
 
 
 #################################################################################################################################################################
