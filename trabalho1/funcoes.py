@@ -52,21 +52,34 @@ def retornaVerticeAdj(lista):
   listaAux =[]
   dictonarioAux={}
   
-  while vertice == lista[idx][0]:
-    #print("entro no while")
-    print(lista[idx][0],":",lista[idx][1])
-    listaAux.append(lista[idx][1])
+  while True:
+    
+    if vertice == lista[idx][0]:
+      
+      #print("entro no while")
+      #print(lista[idx][0],":",lista[idx][1])
+      listaAux.append(lista[idx][1])
+    if vertice != lista[idx][0]:
+      tuplaAux = tuple(listaAux)
+      dictonarioAux.update({vertice: (tuplaAux)})
+
+      print(dictonarioAux.get('1'))
+
+      print(dictonarioAux.get('2'))
+      #print("else",lista[idx][0],":",lista[idx][1])
+    
+      vertice = lista[idx][0]
+      listaAux=[]
+      tuplaAux=()
+      idx -=1
+      
+
+    if vertice == '3':
+      print("AAA")
+      break
     
     idx += 1 
-  else :
-    tuplaAux = tuple(listaAux)
-    dictonarioAux.update({vertice: (tuplaAux)})
 
-    #print(dictonarioAux)
-    print("else",lista[idx][0],":",lista[idx][1])
-    
-    vertice = lista[idx][0]
-    idx -=1
  
     
     
