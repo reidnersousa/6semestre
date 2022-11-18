@@ -34,32 +34,33 @@ print(l[1])         # ['1','35']
 print(l[1][0])      # 1
 print(l[1][1])      # 35
 
+print()
+print(l[2])         # ['1','10']
+print(l[2][0])      # 1
+print(l[2][1])      # 10
+
+
 
 print()
 t=retornaVerticeAdj(l)
-print(t)
-
-
-dictionario ={}
-dictionario[l[0][0]]=l[0][1]
-dictionario[l[0][0]]=l[1][1]
-print(dictionario)
-
 print()
 
 
-"""
-rooms = [[l[r][i]  for r in range(0,50)] for i in range(2)]
-#rooms = [[[False for r in range(20)] for f in range(15)] for t in range(3)]
-
-#pprint(rooms)
-"""
 
 
 ## ultimo elmeento do 1 é 2162 1 7017
+
 rooms2 = [[l[r][i] for i in range(2)] for r in range(2162)]
+#print(type(rooms2))
+tupla =tuple(rooms2)
+#print(tupla,type(tupla))
+var ='1'
 
-
-pprint(rooms2)
+"""
+for idx in range (2162):
+    if var != l[idx][0]:
+        print(l[idx][0],":",l[idx][1])
+        #print(type(l[idx][0]))
+"""    
 
 # print(l[46822]) ## ultimo elemento # da lista 

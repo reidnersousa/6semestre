@@ -47,14 +47,15 @@ def TransformaNPEmLista(arrayDi):
     #### Criar uma tuple que armazena todos os valores de um indice 
 def retornaVerticeAdj(lista):
     
+  vertice=lista[0][0] #1
+  idx =0
+  while vertice != lista[idx][0]:
     
-
-    #tupla =( [for i in range 10] )
-    tupla =(10,11)
-    print(tupla)
-    tupla=(12,14)
-    print(tupla)
-    return None
+    print(lista[idx][0])
+    idx += 1 
+    print(vertice)
+    
+  return None
 
 
 #################################################################################################################################################################
