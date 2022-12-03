@@ -17,44 +17,31 @@ url_path = 'https://raw.githubusercontent.com/reidnersousa/6semestre/Teoria-Graf
 # df recebe o arquivo e transforma em DataFrame
 df = pd.read_csv(url_path , sep ='\t',names=["Teste1"])
 
-arrayDi = df['Teste1'].to_numpy()
+csv_in_numpy = df['Teste1'].to_numpy()
 #print(arrayDi)
 
 
+## TransformaEmLista é uma função que recebe um array np 
+###  transforma em uma lista  de 2 indice 
 
-l=TransformaNPEmLista(arrayDi)
+Lista1=TransformaNPEmLista(csv_in_numpy)   
+print(Lista1[0])    ## ['1','22']
+print(Lista1[0][0]) ## 1
+print(Lista1[0][1]) ## 22
 
+## ListaPrimeiroUltimo recebe a Lista1 que é uma lista com 1 indice e 
+### troca o primeiro indice pelo segundo  
+#### por exemplo dado uma lista de um unico indice  l =[1,2,3,4] essa função vai troca 2,1,3,4
 
-# print(l[0]) # primeiro elemento da lista  ['1','22']
-print(l[0])         # ['1','22']
-print(l[0][0])      # 1
-print(l[0][1])      # 22 
-
-
-print()
-print(l[1])         # ['1','35']
-print(l[1][0])      # 1
-print(l[1][1])      # 35
-
-print()
-print(l[2])         # ['1','10']
-print(l[2][0])      # 1
-print(l[2][1])      # 10
+ListaPrimeiroUltimo=primeiroUltimo_UltimoPrimeiro(Lista1)
+print(ListaPrimeiroUltimo) ## 22
+print(">>",ListaPrimeiroUltimo[46821]) ## 1
+print(">>",len(ListaPrimeiroUltimo)) ## 1
 
 
-print(l[46822]) ## ultimo elemento # da lista  ['11616', '29809']
-print(l[46822][0])  # 11616
-print(l[46822][1])  # 29809
+### dividir Lista Inversa ta errada 
+prontoParaColocaNoDic=dividirListaInversa(ListaPrimeiroUltimo)
 
-print()
-d=retornaVerticeAdj(l)
-
-#print(d.get('5'))
-
-print(type(d))
-
-## ultimo elmeento do 1 é 2162 1 7017
-
-
-
-
+dic1=retornaVerticeAdj(Lista1)
+print(prontoParaColocaNoDic[46821])
+#dic2=retornaVerticeAdj(prontoParaColocaNoDic)

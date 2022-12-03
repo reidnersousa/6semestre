@@ -9,27 +9,22 @@ from pprint import pprint
 import funcoes
 
 
-def CriarRotas(verticeInicial,verticeFinal):
-  rotas =[]
-  numerosAresta =5 # criar uma função que calcular o numero de aresta 
-  i=0
-  while i<numerosAresta:
-    
-    aux=[(verticeInicial[i],verticeFinal[i])]
-    rotas.append(aux)
-    i +=1 
-
-  return rotas
 
 
 
 ######################################################################################################################################################################################################
 #################################################################################################################################################################################################################
 #################################################
-
+### função usando  na main primeira 
 def TransformaNPEmLista(arrayDi):
     l=[]
-    Numero_de_linhas=46824
+    #Numero_de_linhas=46824
+    
+    ListaNP =list(arrayDi)
+    ultimo=ListaNP[-1]                      ## 11616 29809
+    ultimoIndex=ListaNP.index(ultimo)
+    #print("ultimo elemento",ultimo,"p",ultimoIndex)
+    Numero_de_linhas =int(ultimoIndex)+1    ##  ultimo Index = 46824 +1
     
     for i in range(1,Numero_de_linhas):
         #print(arrayDi[i])
@@ -44,14 +39,16 @@ def TransformaNPEmLista(arrayDi):
 ##################################################################################################################
 ##################################################################################################
 ##############################################################################################################################################################################################
-    #### Criar uma tuple que armazena todos os valores de um indice 
+    #### Criar uma tuple que armazena todos os valores de um indice  segunda 
+    ### Função usando na main 
 def retornaVerticeAdj(lista):
     
   vertice=lista[0][0] #1
   idx =0
   listaAux =[]
   dictonarioAux={}
-  
+  ultimaAresta=lista[-1][1]
+  #print(ultimaAresta)
   while True:
     
     if vertice == lista[idx][0]:
@@ -74,8 +71,19 @@ def retornaVerticeAdj(lista):
       idx -=1
       
 
-    if lista[idx][1]=='29809':
-      print("AAA")
+    if lista[idx][1]==ultimaAresta:
+      tuplaAux = tuple(listaAux)
+      dictonarioAux.update({vertice: (tuplaAux)})
+
+      #print(dictonarioAux.get('1'))
+
+      #print(dictonarioAux.get('2'))
+      #print("else",lista[idx][0],":",lista[idx][1])
+    
+      vertice = lista[idx][0]
+      listaAux=[]
+      tuplaAux=()
+      idx -=1
       break
     
     idx += 1 
@@ -86,155 +94,49 @@ def retornaVerticeAdj(lista):
   return dictonarioAux
 
 
-#################################################################################################################################################################
-#####################################################################################################################################################
-# criando uma função que recebe ArrayDi e dividir em dois 
-# essa função serve como auxiliar para a  função que vai criar a lista
-def SeperandoArrayDi(arrayDi):
-  i=1
-  j=1
+def primeiroUltimo_UltimoPrimeiro(ListaNP):
+  listaAux=[]
+  i = 0
+  ultimo=ListaNP[-1]                      ## 11616 29809
+  ultimoIndex=ListaNP.index(ultimo)
+  print(ultimoIndex)
+  Numero_de_linhas =int(ultimoIndex)+1    ##  ultimo Index = 46824 +1
+  print(ListaNP[0])
+  print(ListaNP[-1])
+  while i < Numero_de_linhas:
+    #print(ListaNP[i][0],ListaNP[i][1])
+    listaAux.append(ListaNP[i][1])
+    listaAux.append(ListaNP[i][0])
+    i += 1
+  ListaInverso = listaAux
+  return ListaInverso
+
+
+def dividirListaInversa(lpu):
+  listaParaDic=[]
+  ue_lpu=lpu[-1]              #ultimo elemento de lpu
+  iue_lpu=lpu.index(ue_lpu)    ## index do ultimo elememnto lpu
+  #print(lpu[iue_lpu])
+  indice =1
+  ## tamanho 93643 93644 93645
+  tamanho = len(lpu)
+ # while indice != len(lpu):
+  #  print(indice)
+   # indice += 1
+  #for indice in range (len(lpu)):
+  for indice in range (0,len(lpu),2):
+    juntando =''
+    if indice % 2 ==0:
+      idxPar=str(lpu[indice])
+      #print(idxPar)
+      indice =+1
+      if indice % 2 != 0:
+        
+        
+        idxImpar=str(lpu[indice])
+        juntando = idxPar+' '+idxImpar
+        stringCortadas = juntando.split()
+        listaParaDic.append(stringCortadas)
   
-  VerticeInicial =[]
-  VerticeFinal =[]
-  tam =int(NumeroDeNo(arrayDi))
-  print(tam)
-  while i<tam:
-    aux =int(arrayDi[i][0])
-    VerticeInicial.append(aux) # convert str em int 
-    #VerticeInicial.append(arrayDi[i][0])
-    i +=1
-    if arrayDi[tam][0]==arrayDi[i][0]:
-      aux =int(arrayDi[i][0])
-      VerticeInicial.append(aux)
-      #VerticeInicial.append(arrayDi[i][0])
-  while j <5:
+  return listaParaDic
 
-    auj =int(arrayDi[j][2])
-    VerticeFinal.append(auj)
-    #VerticeFinal.append(arrayDi[j][2]) 
-    j +=1
-    if arrayDi[tam][2]==arrayDi[j][2]:
-      auj =int(arrayDi[j][2])
-      VerticeFinal.append(auj)
-     # VerticeFinal.append(arrayDi[j][2])
-  
-  return VerticeInicial,VerticeFinal
-     
-
-
-
-#Criando função que recebe o arrayDi e matrizAdjNula
-# ta errado 
-def setValoresMatriz(aDi,grade0):
-  arrayDi =aDi
-  grade=grade0
-  k = 1 # não pode ser menor do que 1 ;k vai de 1 ate o tamanhho do elemento
-  l =0
-  tamanho =int(NumeroDeNo(arrayDi))
-  
-  print(tamanho)
-  while k < tamanho: #verifica a condição   
-    while l <2:
-      if arrayDi[k][l]== arrayDi[k][0]:
-        auxk=int(arrayDi[k][l])
-      l += 1
-    if arrayDi[k][l]==arrayDi[k][2]:
-      auxl=(arrayDi[k][l])
-      auxl=int(auxl)
-      #aqui devo devo atribuir os idx para coloca 1 ou 0
-      grade[auxk-1][auxl-1]=1 # colando em um so lado 
-      #teste
-      grade[auxl-1][auxk-1]=1 # colando no outro lado (opcional)  
-    l=0
-    k += 1 #o passo de "incremento"
-  while l<2:
-    if arrayDi[k][l]== arrayDi[k][0]:
-      auxk=int(arrayDi[k][l])
-    l+= 1
-  if arrayDi[k][l]==arrayDi[k][2]:
-    auxl=int(arrayDi[k][l])
-    grade[auxk-1][auxl-1]=1
-  return grade    
-
-
-
-
-
-
-            
-       
-
-
-
-# criando função adjacente  com valoes nulo
-def criarMatrizAdj(numeroVertice):
-    tamanho=int(numeroVertice)
-    grade =[]
-    for _ in range(tamanho):
-        sublista =[]
-        for _ in range(tamanho):
-            sublista.append(0)
-        grade.append(sublista)
-    return grade
-
-
-
-    
-def fib(n):    # write Fibonacci series up to n
-    a, b = 0, 1
-    while a < n:
-        print(a, end=' ')
-        a, b = b, a+b
-    print()
-
-
-#estuda modularização no pythhon
-def NumeroDeNo(arraDii):
-    return arraDii[0][0]
-  
-
-
-def ola(var):
-    return var
-    print("ola mundo")
-
-
-def divisao(n1,n2):
-    if n2>0:
-        return n1/n2
-
-def f(vaa):
-    print("dentro da função f")
-    print(vaa)
-
-def dumb():
-    return f
-
-## principal
-"""
-divi=divisao(8,0)
-print(divi)
-
-if divi:
-    print(divi)
-else:
-    print("kkskskskksksks")
-
-
-vaa=dumb()
-print(type(vaa))
-
-matriz=[[0, 1, 0, 0, 0],
- [1, 0, 0, 0, 1],
- [0, 0, 0, 0, 1],
- [0, 0, 0, 0, 1],
- [1, 1, 1, 1, 0]]
-
-pprint(matriz)
-
-mm=[[9,2],
- [3,4]]
-
-NumeroDeNo(mm)
-
-"""
