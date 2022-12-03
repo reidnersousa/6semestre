@@ -99,10 +99,10 @@ def primeiroUltimo_UltimoPrimeiro(ListaNP):
   i = 0
   ultimo=ListaNP[-1]                      ## 11616 29809
   ultimoIndex=ListaNP.index(ultimo)
-  print(ultimoIndex)
+  #print(ultimoIndex)
   Numero_de_linhas =int(ultimoIndex)+1    ##  ultimo Index = 46824 +1
-  print(ListaNP[0])
-  print(ListaNP[-1])
+  #print(ListaNP[0])
+  #print(ListaNP[-1])
   while i < Numero_de_linhas:
     #print(ListaNP[i][0],ListaNP[i][1])
     listaAux.append(ListaNP[i][1])
@@ -129,7 +129,9 @@ def dividirListaInversa(lpu):
     if indice % 2 ==0:
       idxPar=str(lpu[indice])
       #print(idxPar)
-      indice =+1
+      #indice =+1
+      indice +=1
+
       if indice % 2 != 0:
         
         
