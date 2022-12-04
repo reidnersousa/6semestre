@@ -55,7 +55,9 @@ lopp=ordenarLista(prontoParaColocaNoDic)
 dic2=retornaVerticeAdj(lopp)
 
 
+### verifica no dic1 e no dic2 quais as chaves são iguais 
+verticeRepetidos=qver(dic1,dic2)
 
-print("\n")
-pprint(dic2)
-print(dic2.get('999'))   ### não imprimiu todos 
+
+qVertice = numeroDeVertice(dic1,dic2)
+print("Quantidade de vertice ",qVertice)

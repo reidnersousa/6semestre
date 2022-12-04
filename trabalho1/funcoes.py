@@ -154,3 +154,53 @@ def ordenarLista(olpcnd):
       if olpcnd[j][0] == olpcnd[i][0]:
         lop.append(olpcnd[i])        
   return lop
+
+
+
+#  QuaisVerticeEstaoRepetidos?
+### função que recebe o dic1:
+######(que tem a chave que representa quais vertice estão conectados
+##### e o valeus que repsenta quais vertice estão conectados
+
+###### dic2 q(que tem a chave que repsenta quais vertice  e o values que 
+#### repsenta quais vertice estão conectados )
+
+def qver(d1,d2):
+
+  
+  chavesDic1 = tuple(d1.keys())
+  chavesDic2 = tuple(d2.keys())
+  verticeIguais=[]
+
+  for i in range (len(chavesDic1)):
+    for  j in range (len(chavesDic2)):
+      if chavesDic1[i] in chavesDic2[j]:
+        verticeIguais.append(chavesDic2[j])
+
+  return verticeIguais
+
+
+
+def elementosNaListaRepetidos(dados):
+    
+  valores = []
+  repetidos = set() ## para coloca o elemento reptidos so uma vez 
+
+  for dado in dados:
+      if dado not in valores: 
+        valores.append(dado)
+      else:
+        repetidos.add(dado)
+  return valores,repetidos
+
+
+def numeroDeVertice(dic1,dic2):
+  lista1Dic1 = dic1
+  lista2Dic2 = dic2
+  todosVertice =[y for x in [lista1Dic1,lista2Dic2] for y in x]
+  qtdVertice =(elementosNaListaRepetidos(todosVertice))
+  qtdVertice = list(qtdVertice)
+  print(type(qtdVertice))
+  print(len(qtdVertice))
+  quantidadeDeVertice = len(qtdVertice)
+  return quantidadeDeVertice
