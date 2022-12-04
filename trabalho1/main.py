@@ -44,10 +44,18 @@ prontoParaColocaNoDic=dividirListaInversa(ListaPrimeiroUltimo)
 #print(prontoParaColocaNoDic)
 
 dic1=retornaVerticeAdj(Lista1)
+### ordenar lista é uma fnção que pega uma lista e organizar 
+#### a forma de ordenção e que  o indice [i][0] é como se fosse a chave 
+##### e o indice [i][j] sera o valor da chave 
+###### loga os elementos da lista que tiverem a chave menor ficaram na frente 
+lopp=ordenarLista(prontoParaColocaNoDic)
 
-#### tem que adequar
-dic2=retornaVerticeAdj(prontoParaColocaNoDic)
-pprint(dic1.get('999'))
+### aqui pega os elemenntos que tem o indice [i][0] igual e coloca  esse indice[i][0]  e criar uma chave
+#### todos os elementos que tiveram o msm  indice [i][0] serão atribuidos a uma chave 
+dic2=retornaVerticeAdj(lopp)
+
+
+
 print("\n")
-pprint(dic2.keys())
+pprint(dic2)
 print(dic2.get('999'))   ### não imprimiu todos 

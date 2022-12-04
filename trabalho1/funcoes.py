@@ -142,3 +142,15 @@ def dividirListaInversa(lpu):
   
   return listaParaDic
 
+
+
+
+### demoras msms
+def ordenarLista(olpcnd):
+  lop=[]
+  j=1
+  for j in range (len(olpcnd)):
+    for i in range (len(olpcnd)):
+      if olpcnd[j][0] == olpcnd[i][0]:
+        lop.append(olpcnd[i])        
+  return lop
