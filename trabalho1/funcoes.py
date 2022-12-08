@@ -109,7 +109,7 @@ def primeiroUltimo_UltimoPrimeiro(ListaNP):
     listaAux.append(ListaNP[i][0])
     i += 1
   ListaInverso = listaAux
-  return ListaInverso
+  return dividirListaInversa(ListaInverso)
 
 
 def dividirListaInversa(lpu):
@@ -178,9 +178,6 @@ def qver(d1,d2):
         verticeIguais.append(chavesDic2[j])
 
   return verticeIguais
-
-
-
 def elementosNaListaRepetidos(dados):
     
   valores = []
@@ -191,16 +188,65 @@ def elementosNaListaRepetidos(dados):
         valores.append(dado)
       else:
         repetidos.add(dado)
-  return valores,repetidos
-
+  return valores
 
 def numeroDeVertice(dic1,dic2):
   lista1Dic1 = dic1
   lista2Dic2 = dic2
   todosVertice =[y for x in [lista1Dic1,lista2Dic2] for y in x]
   qtdVertice =(elementosNaListaRepetidos(todosVertice))
+  todosVerticeSemRepeticao =qtdVertice
+  
+ 
   qtdVertice = list(qtdVertice)
-  print(type(qtdVertice))
-  print(len(qtdVertice))
+  
   quantidadeDeVertice = len(qtdVertice)
   return quantidadeDeVertice
+
+
+def todosOsVerticeSemRepeticao(dic1,dic2):
+  lista1Dic1 = dic1
+  lista2Dic2 = dic2
+  todosVertice =[y for x in [lista1Dic1,lista2Dic2] for y in x]
+  qtdVertice =(elementosNaListaRepetidos(todosVertice))
+  todosVerticeSemRepeticao =qtdVertice
+  
+ 
+  qtdVertice = list(qtdVertice)
+  
+  quantidadeDeVertice = len(qtdVertice)
+  return todosVerticeSemRepeticao
+
+def juntandoAsDuasLista(lista1,lista1Oposta):
+  lista1Dic1 = lista1
+  lista2Dic2 = lista1Oposta
+  listaPrincipal =[y for x in [lista1Dic1,lista2Dic2] for y in x]
+  
+  return listaPrincipal
+
+
+
+def grauDeCadaVertice(listaAdj):
+  ### grau de cada Vertice
+  gdcVertice={}
+  i=1
+  ll=list(listaAdj.keys())
+  tam = len(ll)
+  print(tam)
+  while True:
+  #for i in range(1,7):
+    p = str(i)
+    g=listaAdj.get(p)
+    #print("tamanho de g",g,"p",p)
+    ow=len(g)
+
+    #print(ow)
+    #print("g",g,"\np",p)
+    grauVertice = ow
+    gdcVertice.update({p:(grauVertice)})
+    
+   
+    if i == len(listaAdj.keys()):
+      break
+    i +=1
+  return gdcVertice
